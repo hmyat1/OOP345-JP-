@@ -1,0 +1,42 @@
+/*/////////////////////////////////////////////////////////////////////////
+                       Workshop - 1 
+Full Name  :Hla Myint Myat 
+Student ID#:185923216
+Email      :hmyat1@myseneca.ca
+Section    :NFF
+
+Authenticity Declaration:
+I declare that this submission is the result of my own work and I only copied
+the code that my professor provided to complete my workshops and assignments. 
+This submitted piece of work has not been shared with any other student or 3rd party content provider.
+ /////////////////////////////////////////////////////////////////////////*/    
+
+
+In Workshop 1, I learned several key concepts in C++ by working on managing food orders. The main concepts covered were linkage, storage duration, namespaces, header guards, and operating system interfaces.
+
+Internal vs. External Linkage
+Linkage determines the visibility of variables and functions across files. Internal linkage restricts access to the file where the symbol is defined, while external linkage allows access across multiple files. In my code, the global variables g_taxrate and g_dailydiscount were declared in FoodOrder.h with the extern keyword and defined in FoodOrder.cpp. 
+
+Static Variables
+Static variables retain their value between function calls. In the display method of the FoodOrder class, I used a static variable to keep track of how many times the function was called. This provided a persistent counter without using global variables.
+
+Namespaces and Header Guards
+Namespaces help prevent name conflicts by grouping related code together. I used the seneca namespace for the FoodOrder class to avoid conflicts with other code. Header guards prevent multiple inclusions of the same header file, which can cause redefinition errors. The header guard in FoodOrder.h ensured the file was included only once.
+
+In Part 2 of the workshop, I upgraded the FoodOrder class to handle food descriptions of any length. Initially, the class was limited to storing descriptions of a fixed length, which could cause issues if descriptions were longer than expected.
+
+To address this limitation, I made changes to how the class reads and stores descriptions. Instead of using fixed-size arrays for descriptions, I switched to using dynamic memory allocation. This means that when the program reads a description, it allocates memory based on the length of the description. This upgrade allows the FoodOrder class to handle descriptions of any length, making the program more flexible and capable of managing various food orders without running into memory constraints.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
