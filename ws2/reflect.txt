@@ -1,0 +1,24 @@
+/*/////////////////////////////////////////////////////////////////////////
+                       Workshop - 2 
+Full Name  :Hla Myint Myat 
+Student ID#:185923216
+Email      :hmyat1@myseneca.ca
+Section    :NFF
+
+Authenticity Declaration:
+I declare that this submission is the result of my own work and I only copied
+the code that my professor provided to complete my workshops and assignments. 
+This submitted piece of work has not been shared with any other student or 3rd party content provider.
+ /////////////////////////////////////////////////////////////////////////*/
+
+During this workshop, I learned several important things about C++ programming:
+
+Reading Files: I figured out how to read information from a text file in C++. This involved using special tools called input file stream objects to grab data from files and do things with it, like counting how many records are in the file.
+
+Timing Tasks: I also learned how to keep track of time while working on specific tasks. This was done using a library called std::chrono, which helped me measure how long certain tasks took to complete accurately.
+
+Copying and Moving Stuff: I got familiar with copying and moving data around in C++. This included understanding when to make copies of data (like when we need to use it elsewhere without changing the original) and when to move data (like when we want to transfer ownership of data quickly).
+
+Understanding Speed Differences: One interesting thing I learned was why moving data is usually faster than copying it. Moving data is like giving someone else ownership of your stuff, while copying is like making an exact duplicate. Moving is quicker because you're not creating a new thing, just passing it along.
+
+Throughout the workshop, I faced challenges like managing memory properly to avoid mistakes like using too much memory or causing the program to crash. By practicing and testing my code thoroughly, I was able to overcome these challenges and improve my skills in C++ programming.
