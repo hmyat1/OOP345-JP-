@@ -1,0 +1,24 @@
+/*/////////////////////////////////////////////////////////////////////////
+                       Workshop - 3
+Full Name  :Hla Myint Myat 
+Student ID#:185923216
+Email      :hmyat1@myseneca.ca
+Section    :NFF
+
+Authenticity Declaration:
+I declare that this submission is the result of my own work and I only copied
+the code that my professor provided to complete my workshops and assignments. 
+This submitted piece of work has not been shared with any other student or 3rd party content provider.
+ /////////////////////////////////////////////////////////////////////////*/
+
+ In this workshop, I learned how to design and code a class template. I created a Collection class that can hold any type of item and manage a collection up to a certain size.
+
+I also learned how to create class variables that are also templates. In the Collection class, I used templates for m_smallestItem and m_largestItem to keep track of the smallest and largest items. This showed me how to use static member variables with templates.
+
+I specialized the class variables for the Book type in the Collection class. This means I set specific default values for m_smallestItem and m_largestItem when dealing with books. This taught me how to handle specific types differently using templates.
+
+I learned how to create instances of a template class with different types. In the main.cpp file, I created collections of int, double, and Book. This exercise showed me how templates can work with various data types, proving their versatility.
+
+Moreover,I specialized the print function of the Collection class for the Book type. This means I made a special version of the print function that formats book details differently. This helped me understand how to customize functions for specific data types within a template.
+
+I have also created a new class called OrderedCollection that inherits from the Collection class. The OrderedCollection class keeps items sorted when they are added. This exercise taught me how to extend a base template class and add new functionality, showing the power of templates and inheritance together.
