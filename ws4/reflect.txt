@@ -1,0 +1,21 @@
+/*/////////////////////////////////////////////////////////////////////////
+                       Workshop - 4
+Full Name  :Hla Myint Myat 
+Student ID#:185923216
+Email      :hmyat1@myseneca.ca
+Section    :NFF
+
+Authenticity Declaration:
+I declare that this submission is the result of my own work and I only copied
+the code that my professor provided to complete my workshops and assignments. 
+This submitted piece of work has not been shared with any other student or 3rd party content provider.
+ /////////////////////////////////////////////////////////////////////////*/
+
+
+In this workshop, I learned about two important concepts in programming called composition and aggregation. Composition is like saying "has-a," where one thing contains another and is responsible for it. For example, a "Reservation" class holds details like reservation ID, name, and email, showing a composition relationship. Aggregation is also "has-a," but the contained thing can exist independently. In the "Restaurant" class, an array of reservation pointers demonstrates aggregation.
+
+I also learned about move and copy functions. These functions help manage how objects are copied or moved in memory. In composition, they handle ownership and memory well. In aggregation, they deal more with copying pointers. These functions are crucial for managing memory efficiently, especially for things that need memory while running.
+
+In programming, association means classes interact without owning or containing each other. For example, in the "Reservation" class, the "operator<<" function talks to "std::ostream" to show reservation details, which is association.
+
+Throughout the workshop, I faced challenges but understood how composition and aggregation work differently in handling objects and memory. Mastering these concepts is key to writing efficient and well-structured code.
