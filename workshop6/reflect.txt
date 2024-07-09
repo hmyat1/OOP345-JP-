@@ -1,0 +1,23 @@
+
+
+After wrapping up this workshop, I learned some key stuff about handling dynamic memory allocation and managing polymorphic objects. Here's the scoop, along with some of the hiccups I faced:
+
+So, I had this vector of pointers to polymorphic Resource objects to deal with. When you're using the new operator to allocate memory for objects (like files or directories), you gotta make sure to free up that memory to avoid leaks. I used the delete operator for each item, cleared the vector, and destroyed the objects to free up that memory:
+
+
+for (Resource* resource : m_contents) {
+    delete resource; // Free up memory for each object
+}
+m_contents.clear();
+To use specific functions for Directory objects stored in a Resource*, I had to do some type casting. For example, to access the count() function for a Directory object, I cast the base class pointer (Resource*) to a derived class pointer (Directory*):
+
+
+Directory* dir = dynamic_cast<Directory*>(resource);
+if (dir) {
+    dir->count();
+}
+Using std::vector<seneca::Resource*> (a vector of pointers) was super important for working efficiently with polymorphic objects. With pointers, we can store different derived types (like File and Directory) in the same container. This is crucial for dynamic binding and polymorphism, letting us call specific functions on these objects regardless of their actual type. If we used std::vector<seneca::Resource> (a vector of objects), it wouldn't support polymorphism because it would slice the objects to their base class type, blocking us from calling derived class-specific functions.
+
+I learned how to handle polymorphic objects using an STL vector container. I got the importance of freeing up dynamically allocated memory, using type casting to access specific functions, and using a vector of pointers when dealing with polymorphic objects to keep their actual type. I did run into some issues, like making sure memory was properly freed and using type casting correctly to access functions from derived classes. But I handled these by sticking to best practices and using C++ language features.
+
+Overall, this workshop taught me a lot about managing dynamic memory and polymorphic objects in C++, highlighting the importance of proper memory management, correct use of type casting, and using STL containers effectively.
