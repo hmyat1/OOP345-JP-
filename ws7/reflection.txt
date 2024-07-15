@@ -1,0 +1,37 @@
+One of the main learnings from this workshop was how to efficiently handle data stored in files and organize it into structured formats using C++ structs. For instance, I implemented a BakedGood struct to encapsulate details about bakery items such as type (bread or pastry), description, shelf life, stock quantity, and price. This struct was pivotal in representing each bakery item consistently throughout the program.
+
+struct BakedGood {
+    BakedType m_type;
+    std::string m_desc;
+    size_t m_life;
+    size_t m_stock;
+    double m_price;
+};
+
+Additionally, the workshop extensively utilized Standard Template Library (STL) functions to enhance efficiency and readability in handling collections of bakery items:
+
+I employed the sort function to arrange bakery items based on various criteria like description, shelf life, stock quantity, and price. This flexibility allowed for dynamic sorting based on user input or specific requirements within the program.
+
+void Bakery::sortBakery(const string& sorts) {
+    sort(m_goods.begin(), m_goods.end(), [sorts](const BakedGood& good1, const BakedGood& good2) {
+        if (sorts == "Description") return good1.m_desc < good2.m_desc;
+        else if (sorts == "Shelf") return good1.m_life < good2.m_life;
+        else if (sorts == "Stock") return good1.m_stock < good2.m_stock;
+        else if (sorts == "Price") return good1.m_price < good2.m_price;
+        else return false;
+    });
+}
+
+To combine sorted lists of bakery items, I utilized the merge function. This was particularly useful for creating a unified, sorted collection of both bread and pastries based on price.
+
+std::vector<BakedGood> Bakery::combine(const Bakery& other) {
+    vector<BakedGood> collection(m_goods.size() + other.m_goods.size());
+
+    merge(other.m_goods.begin(), other.m_goods.end(), m_goods.begin(), m_goods.end(), collection.begin(), [](const BakedGood& good1, const BakedGood& good2) {
+        return good1.m_price < good2.m_price;
+    });
+
+    return collection;
+}
+
+I encountered challenges while parsing data from files, requiring meticulous string manipulation to accurately extract and format attributes for each bakery item. Additionally, implementing dynamic sorting based on user input initially posed difficulties, but utilizing lambda functions within sorting algorithms effectively addressed these challenges.
