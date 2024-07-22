@@ -1,0 +1,47 @@
+/***********************************************************************
+                        Workshop - 8
+
+Name : Hla Myint Myat
+Email : hmyat1@myseneca.ca
+Student ID : 185923216
+
+I have done all the coding by myself and only copied the code that my
+professor provided to complete my workshops and assignments.
+
+***********************************************************************/
+
+In this workshop, I explored how to implement the Singleton pattern using a templated Database class in C++. The Singleton pattern ensures that a class has only one instance and provides a global point of access to that instance. My Database class was designed to handle various data types, specifically long long integers and strings, and perform actions like setting and retrieving values.
+
+Main Concepts in this concept is Singleton Pattern.
+
+Ensures a single instance of a class with global access.
+The getInstance function creates an instance if it doesn't already exist and returns the same instance for all subsequent calls.
+
+template<typename T>
+static Database<T>& getInstance(const std::string& filename) {
+    static Database<T> instance(filename);
+    return instance;
+}
+
+Template Classes allow the Database class to handle different data types.
+I made the class a template by adding template <typename T> and changing the data member types to T.
+
+template<typename T>
+class Database {
+    std::map<std::string, T> data;
+public:
+    // Methods
+};
+
+
+unique_ptr enforces single ownership, which conflicts with the need for global access to the single instance, making it unsuitable for the Database class.
+
+
+The Database class manages its instance as a resource but does not support copy and move operations.
+The Singleton pattern naturally prevents copying and moving by limiting creation to a single object, so this is not an issue.
+Constructor Calls:
+
+The constructor may seem to be called twice due to template specialization for different types (e.g., std::string and long long), resulting in separate instances for each type.
+This workshop underscored the significance of singletons and templating in resource management and efficient data handling in C++ applications.
+
+
